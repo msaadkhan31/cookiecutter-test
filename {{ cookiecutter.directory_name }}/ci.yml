@@ -1,0 +1,29 @@
+team: {{ cookiecutter.team_name }}
+email: {{ cookiecutter.team_email }}
+slack: {{ cookiecutter.project_slack_channel}}
+project: {{ cookiecutter.project_type}}
+agent: {{ cookiecutter.jenkins_agent_label }}
+{% if cookiecutter.code_source -%}
+source: {{ cookiecutter.code_source }}
+{% endif -%}
+{% if cookiecutter.branch -%}
+branch: {{ cookiecutter.branch }}
+{% endif -%}
+{% if cookiecutter.dockerenv -%}
+dockerenv: {{ cookiecutter.dockerenv }}
+{% endif -%}
+
+{% if cookiecutter.project_type != 'maven' -%}
+stages:
+    - code-coverage
+    - code-quality
+
+jobs:
+    - name: code-coverage
+      stage: code-coverage
+      cmd: make code-coverage
+
+    - name: code-quality
+      stage: cocde-quality
+      cmd: make code-quality
+{% endif -%}

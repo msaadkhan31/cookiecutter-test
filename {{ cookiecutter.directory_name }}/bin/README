@@ -1,0 +1,11 @@
+What's this folder for?
+=======================
+
+We provide a central set of deployment scripts to cover the most common use cases and functionality
+for building and deploying your service, however, there are always edge cases we can't cover
+because they're too specific to one or two services in a team.
+
+This folder is where you can place the needed scripts to automate those non-standard steps so
+you can use them from your Makefile
+
+You can remove this README file if you wish

@@ -1,0 +1,27 @@
+team: {{ cookiecutter.team_name }}
+email: {{ cookiecutter.team_email }}
+slack: {{ cookiecutter.project_slack_channel}}
+project: {{ cookiecutter.project_type}}
+agent: {{ cookiecutter.jenkins_agent_label }}
+{% if cookiecutter.code_source -%}
+source: {{ cookiecutter.code_source }}
+{% endif -%}
+{% if cookiecutter.branch -%}
+branch: {{ cookiecutter.branch }}
+{% endif -%}
+{% if cookiecutter.dockerenv -%}
+dockerenv: {{ cookiecutter.dockerenv }}
+{% endif %}
+
+stages:
+    - package
+    - deploy-qa
+
+jobs:
+    - name: package
+      stage: package
+      cmd: make package
+
+    - name: deploy-qa
+      stage: deploy-qa
+      cmd: make deploy-qa
