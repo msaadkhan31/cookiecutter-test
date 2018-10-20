@@ -1,0 +1,12 @@
+{
+   "directory_name": "ops",
+   "team_name": "",
+   "service_name":"",
+   "team_email": "",
+   "project_slack_channel": "",
+   "jenkins_agent_label": "pipeline-generator-agent",
+   "code_source": ["phabricator", "github", "bitbucket"],
+   "branch": "",
+   "dockerenv": "",
+   "project_type": "maven"
+}
