@@ -14,6 +14,5 @@
    "s3_key": "Microservices/test",
    "task_defination_path": "aws/eng",
    "docker_type": "single",
-   "dockerfile_path": "Dockerfile",
-   "MakeFile_Name":"MakeFile"
+   "dockerfile_path": "Dockerfile"
 }
