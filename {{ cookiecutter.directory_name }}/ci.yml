@@ -13,7 +13,7 @@ branch: {{ cookiecutter.branch }}
 dockerenv: {{ cookiecutter.dockerenv }}
 {% endif -%}
 
-{% if cookiecutter.project_type != 'maven' -%}
+{% if cookiecutter.project_type == 'maven' -%}
 stages:
     - code-coverage
     - code-quality

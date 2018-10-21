@@ -14,14 +14,17 @@ dockerenv: {{ cookiecutter.dockerenv }}
 {% endif %}
 
 stages:
-    - package
-    - deploy-qa
+  - build
+  - deploy-qa
 
 jobs:
-    - name: package
-      stage: package
-      cmd: make package
+  - name: build
+    stage: build
+    cmd: make package
+    branch: {{ cookiecutter.branch }}
 
-    - name: deploy-qa
-      stage: deploy-qa
-      cmd: make deploy-qa
+  - name: deploy-qa
+    stage: deploy-qa
+    profile: qa
+    cmd: make deploy-qa
+    branch: {{ cookiecutter.branch }}
