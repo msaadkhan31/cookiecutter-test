@@ -1,18 +1,21 @@
 import logging
 import shutil
 import os
-def move_file(source, desti):
 
-  shutil.move(source, desti)
+DockerEnv = '{{ cookiecutter.dockerenv }}'
 
 
 def main():
     try:
-        if '{{ cookiecutter.dockerenv }}' == 'yes':
-            inplace_change("Makefile", "create-push-docker-image", "upload-eb-version")
+        if DockerEnv == 'yes':
+            inplace_change("Makefile", "upload-eb-version", "create-push-docker-image")
         move_file("Makefile", "../Makefile")
     except ImportError:
         logging.debug("Unable to copy file")
+
+
+def move_file(source, desti):
+  shutil.move(source, desti)
 
 
 def inplace_change(filename, old_string, new_string):
