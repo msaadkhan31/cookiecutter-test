@@ -14,5 +14,6 @@
    "s3_key": "Microservices/test",
    "task_defination_path": "aws/eng",
    "docker_type": "single",
-   "dockerfile_path": "Dockerfile"
+   "dockerfile_path": "Dockerfile",
+   "health_url":"health"
 }

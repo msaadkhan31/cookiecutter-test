@@ -1,8 +1,13 @@
 .DEFAULT_GOAL := package
 clean:
 	mvn clean
+
+test:
+    mvn test
+
 package: clean
-	mvn package -U -DskipTests=true
+    mvn -B install -DskipTests=true
+	mvn package -U
 
 python-requirements:
 	chmod +x ops/bin/download_scripts.sh

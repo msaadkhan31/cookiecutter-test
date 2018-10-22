@@ -13,17 +13,9 @@ branch: {{ cookiecutter.branch }}
 dockerenv: {{ cookiecutter.dockerenv }}
 {% endif -%}
 
-{% if cookiecutter.project_type == 'maven' -%}
 stages:
-    - code-coverage
-    - code-quality
-
+      - test
 jobs:
-    - name: code-coverage
-      stage: code-coverage
-      cmd: make code-coverage
-
-    - name: code-quality
-      stage: cocde-quality
-      cmd: make code-quality
-{% endif -%}
+  - name: test
+    stage: test
+    cmd: make test
