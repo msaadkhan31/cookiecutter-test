@@ -15,5 +15,11 @@
    "task_defination_path": "aws/eng",
    "docker_type": "single",
    "dockerfile_path": "Dockerfile",
-   "health_url":"health"
+   "health_url":"health",
+   "_help": {
+        "directory_name": {
+            "prompt": "Name of the directory which will contain the generated project",
+            "help": "This will be the root of the new project. bla bla."
+        }
+    },
 }
