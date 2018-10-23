@@ -16,8 +16,9 @@
    "docker_type": "single",
    "dockerfile_path": "Dockerfile",
    "health_url":"health",
-   "_help": {
+ "_parameters": {
         "directory_name": {
+            "default_value": "default_directory_name",
             "prompt": "Name of the directory which will contain the generated project",
             "help": "This will be the root of the new project. bla bla."
         }
