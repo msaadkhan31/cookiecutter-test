@@ -1,9 +1,9 @@
 .DEFAULT_GOAL := package
 clean:
-    mvn clean
+	mvn clean
 
 package: clean
-    mvn -B install -DskipTests=true
+	mvn -B install -DskipTests=true
 	mvn package -U
 
 python-requirements:
