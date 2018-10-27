@@ -47,10 +47,10 @@ variable "deployment_policy" {
 
 variable "mandatory_tags" {
   default = {
-    "careem:tier"        = "testing"
-    "careem:team"        = "devops"
-    "careem:criticality" = "medium"
-    "careem:vpc"         = "qa-vpc"
+    "cteam"     = "devops"
+    "cservice"  = "cicd"
+    "cenv"      = "qa"
+    "cjiraid"   = "ticket-id"
   }
 }
 
@@ -94,7 +94,6 @@ variable "beanstalk_env_variable_values" {
 }
 
 variable "additional_environment_variables" {
-  default = {
-  }
+  default = {}
 }
 

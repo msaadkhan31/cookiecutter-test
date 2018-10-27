@@ -9,13 +9,16 @@ source: {{ cookiecutter.code_source }}
 {% if cookiecutter.branch -%}
 branch: {{ cookiecutter.branch }}
 {% endif -%}
-{% if cookiecutter.dockerenv -%}
-dockerenv: {{ cookiecutter.dockerenv }}
-{% endif -%}
-
+{% if cookiecutter.project_type != 'maven' -%}
 stages:
-      - test
+	- code-coverage
+	- code-quality
 jobs:
-  - name: test
-    stage: test
-    cmd: make test
+	- name: code-coverage
+	  stage: code-coverage
+	  cmd: make code-coverage
+
+	- name: code-quality
+	  stage: code-quality
+	  cmd: make code-quality
+{% endif -%}

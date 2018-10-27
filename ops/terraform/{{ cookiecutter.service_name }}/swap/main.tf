@@ -1,16 +1,3 @@
-provider "aws" {
-  region = "eu-west-1"
-}
-terraform {
-  backend "s3" {
-    bucket = "iacv2-qa"
-    key    = "{{ cookiecutter.service_name }}/dns.tfstate"
-    region = "eu-west-1"
-    workspace_key_prefix = "statefiles"
-  }
-}
-
-
 resource "aws_route53_record" "blue" {
   zone_id  = "${var.r53_zone_id}"
   name     = "${var.service_url}"

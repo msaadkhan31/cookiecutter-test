@@ -1,26 +1,21 @@
 {
-   "directory_name": "ops",
-   "team_name": "",
-   "team_email": "",
-   "project_slack_channel": "",
-   "jenkins_agent_label": "pipeline-generator-agent",
-   "code_source": ["phabricator", "github", "bitbucket"],
-   "branch": "",
-   "dockerenv": "no",
-   "project_type": "maven",
-   "service_name": "",
-   "app_name": "Careem Labs",
-   "bucket_name": "careemeng-sbb",
-   "s3_key": "Microservices/test",
-   "task_defination_path": "aws/eng",
-   "docker_type": "single",
-   "dockerfile_path": "Dockerfile",
-   "health_url":"health",
- "_parameters": {
-        "directory_name": {
-            "default_value": "default_directory_name",
-            "prompt": "Name of the directory which will contain the generated project",
-            "help": "This will be the root of the new project. bla bla."
-        }
-    }
+  "service_name": "",
+  "application_name": "",
+  "s3_bucket_name": "",
+  "s3_key": "",
+  "team_name": "",
+  "team_email": "",
+  "project_slack_channel": "",
+  "jenkins_agent_label": "pipeline-generator-agent",
+  "code_source": [
+    "phabricator",
+    "github",
+    "bitbucket"
+  ],
+  "project_type": "maven",
+  "branch": "",
+  "dockerenv": "",
+  "task_defination_path": "",
+  "dockerfile_path": "Dockerfile",
+  "health_url": "health"
 }

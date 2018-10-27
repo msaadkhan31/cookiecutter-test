@@ -1,9 +1,6 @@
 .DEFAULT_GOAL := package
 clean:
-	mvn clean
-
-test:
-    mvn test
+    mvn clean
 
 package: clean
     mvn -B install -DskipTests=true
