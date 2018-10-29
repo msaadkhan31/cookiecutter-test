@@ -1,7 +1,7 @@
 {% if cookiecutter.dockerenv -%}
-    {% set publish_artifact = 'ops/bin/create_push_docker_image.py' -%}
+    {% set publish_artifact = 'ops/bin/create-push-docker-image.py' -%}
 {% else -%}
-    {% set publish_artifact = 'ops/bin/upload_eb_version.py' -%}
+    {% set publish_artifact = 'ops/bin/upload-eb-version.py' -%}
 {% endif %}
 .DEFAULT_GOAL := package
 clean:
@@ -19,7 +19,7 @@ python-requirements:
 
 deploy-qa: python-requirements package
 	{{ publish_artifact }} --profile=qa --service={{ cookiecutter.service_name }}
-	ops/bin/deploy-qa.py --profile=qa --service={{ cookiecutter.service_name }}
+	ops/bin/deploy-qa.py --profile=qa --servicSe={{ cookiecutter.service_name }}
 
 deploy-stb: python-requirements package
 	{{ publish_artifact }} --profile=stb --service={{ cookiecutter.service_name }}
