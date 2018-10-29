@@ -15,6 +15,7 @@
   ],
   "project_type": "maven",
   "branch": "",
+  "artifact_path": "target",
   "dockerenv": "",
   "task_defination_path": "",
   "dockerfile_path": "Dockerfile",
