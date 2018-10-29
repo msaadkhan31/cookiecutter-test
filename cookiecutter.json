@@ -13,8 +13,9 @@
     "github",
     "bitbucket"
   ],
-  "project_type": "maven",
+  "project_type": "",
   "branch": "",
+  "artifact_name": "",
   "artifact_path": "target",
   "dockerenv": "",
   "task_defination_path": "",

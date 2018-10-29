@@ -16,8 +16,9 @@ team_name | Your email id | saad.khan@careem.com
 project_slack_channel | Name of your slack channel | ci-cd_iac2_onboarding
 jenkins_agent_label | Jenkins agent label default:pipeline-generator-agent | Name or empty
 code_source | SCM selection | type 1 for phabricator
-project_type | Type of your project default: maven | type if not maven, or empty for maven
+project_type | Type of your project | ex: maven
 branch | Git branch from where your CI will run | Ex: latest
+artifact_name | Name of your artifact in your pom file | ex: captain-service
 artifact_path | path of the artifact in your repo default: target | empty or provide value
 dockerenv | If you are env is dockerized type single or multi | keep empty if not docker otherwise `single` or `multi`
 task_defination_path | task definition path  is the path of Docker.aws.json file kept in your repo | ex: aws/eng
