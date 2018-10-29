@@ -1,4 +1,4 @@
-{% if dockerenv -%}
+{% if cookicutter.dockerenv -%}
     {% set publish_artifact = 'ops/bin/create_push_docker_image.py' -%}
 {% else -%}
     {% set publish_artifact = 'ops/bin/upload_eb_version.py' -%}
