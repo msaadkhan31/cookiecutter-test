@@ -1,3 +1,8 @@
+{% if dockerenv -%}
+    {% set publish_artifact = 'ops/bin/create_push_docker_image.py' -%}
+{% else -%}
+    {% set publish_artifact = 'ops/bin/upload_eb_version.py' -%}
+{% endif %}
 .DEFAULT_GOAL := package
 clean:
 	mvn clean
@@ -13,22 +18,22 @@ python-requirements:
 	chmod +x ops/bin/*
 
 deploy-qa: python-requirements package
-	ops/bin/upload-eb-version.py --profile=qa --service={{ cookiecutter.service_name }}
+	{{ publish_artifact }} --profile=qa --service={{ cookiecutter.service_name }}
 	ops/bin/deploy-qa.py --profile=qa --service={{ cookiecutter.service_name }}
 
 deploy-stb: python-requirements package
-	ops/bin/upload-eb-version.py --profile=stb --service={{ cookiecutter.service_name }}
+	{{ publish_artifact }} --profile=stb --service={{ cookiecutter.service_name }}
 	ops/bin/deploy-qa.py --profile=stb --service={{ cookiecutter.service_name }}
 
 merge-rc: python-requirements
 	ops/bin/merge-branch.sh release-candidate
 
 dryrun-prod: python-requirements package
-	ops/bin/upload-eb-version.py --profile=prod --service={{ cookiecutter.service_name }}
+	{{ publish_artifact }} --profile=prod --service={{ cookiecutter.service_name }}
 	ops/bin/deploy-prod.py --profile=prod --service={{ cookiecutter.service_name }} --dryrun=true
 
 deploy-prod: python-requirements package
-	ops/bin/upload-eb-version.py --profile=prod --service={{ cookiecutter.service_name }}
+	{{ publish_artifact }} --profile=prod --service={{ cookiecutter.service_name }}
 	ops/bin/deploy-prod.py --profile=prod --service={{ cookiecutter.service_name }} --dryrun=false
 
 ten-percent-prod: python-requirements
