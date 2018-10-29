@@ -14,10 +14,10 @@ branch: {{ cookiecutter.branch }}
 
 stages:
 	- build
-	- beanstalk-qa
+	- deploy-qa
 	- merge-rc
 	- dryrun-prod
-	- beanstalk-prod
+	- deploy-prod
 	- ten-percent-prod
 	- health-check-prod
 	- fifty-percent-prod
@@ -31,10 +31,10 @@ jobs:
 	  cmd: make package
 	  branch: {{ cookiecutter.branch }}
 
-	- name: beanstalk-qa
-	  stage: beanstalk-qa
+	- name: deploy-qa
+	  stage: deploy-qa
 	  profile: qa
-	  cmd: make beanstalk-qa
+	  cmd: make deploy-qa
 	  branch: {{ cookiecutter.branch }}
 
 	- name: merge-rc
@@ -51,11 +51,11 @@ jobs:
 	  cmd: make dryrun-prod_lms
 	  branch: release-candidate
 
-	- name: beanstalk-prod
-	  stage: beanstalk-prod
+	- name: deploy-prod
+	  stage: deploy-prod
 	  when: manual
 	  profile: prod
-	  cmd: make beanstalk-prod
+	  cmd: make deploy-prod
 	  branch: release-candidate
 
 	- name: ten-percent-prod
