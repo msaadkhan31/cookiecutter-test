@@ -15,7 +15,7 @@
   ],
   "project_type": "maven",
   "branch": "",
-  "dockerenv": "".
+  "dockerenv": "",
   "task_defination_path": "",
   "dockerfile_path": "Dockerfile",
   "health_url": "health"
