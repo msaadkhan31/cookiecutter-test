@@ -1,3 +1,8 @@
+{% if cookiecutter.dockerenv -%}
+    {% set publish_artifact = 'ops/bin/create_push_docker_image.py' -%}
+{% else -%}
+    {% set publish_artifact = 'ops/bin/upload_eb_version.py' -%}
+{% endif %}
 .DEFAULT_GOAL := package
 clean:
 	mvn clean
@@ -46,8 +51,3 @@ full-traffic-prod: python-requirements
 
 destroy-old-prod: python-requirements
 	ops/bin/destroy-idle-env.py --profile=prod --service={{ cookiecutter.service_name }}
-{% if cookiecutter.dockerenv -%}
-    {% set publish_artifact = 'ops/bin/create_push_docker_image.py' -%}
-{% else -%}
-    {% set publish_artifact = 'ops/bin/upload_eb_version.py' -%}
-{% endif %}
