@@ -18,7 +18,7 @@ jenkins_agent_label | Jenkins agent label default:pipeline-generator-agent | Nam
 code_source | SCM selection | type 1 for phabricator
 project_type | Type of your project | ex: maven
 branch | Git branch from where your CI will run | Ex: latest
-artifact_name | Name of your artifact in your pom file | ex: captain-service
+ecr_repo_name | Name of your ECR Repo | ex: captain-service
 artifact_path | path of the artifact in your repo default: target | empty or provide value
 artifact_extension | extension of your artifact | ex: war or jar
 upload_extension | extension of which you upload your artifact| ex: war or zip

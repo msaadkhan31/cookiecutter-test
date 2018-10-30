@@ -15,12 +15,12 @@
   ],
   "project_type": "",
   "branch": "",
-  "artifact_name": "",
   "artifact_path": "target",
   "artifact_extension": "",
   "upload_extension": "",
   "dockerenv": "",
   "task_defination_path": "",
+  "ecr_repo_name": "",
   "dockerfile_path": "Dockerfile",
   "health_url": "health"
 }

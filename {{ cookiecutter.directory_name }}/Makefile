@@ -19,7 +19,7 @@ python-requirements:
 
 deploy-qa: python-requirements package
 	{{ publish_artifact }} --profile=qa --service={{ cookiecutter.service_name }}
-	ops/bin/deploy-qa.py --profile=qa --servicSe={{ cookiecutter.service_name }}
+	ops/bin/deploy-qa.py --profile=qa --service={{ cookiecutter.service_name }}
 
 deploy-stb: python-requirements package
 	{{ publish_artifact }} --profile=stb --service={{ cookiecutter.service_name }}
