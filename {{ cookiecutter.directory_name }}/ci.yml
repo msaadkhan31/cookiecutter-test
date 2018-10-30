@@ -11,14 +11,14 @@ branch: {{ cookiecutter.branch }}
 {% endif -%}
 {% if cookiecutter.project_type != 'maven' -%}
 stages:
-	- code-coverage
-	- code-quality
+  - code-coverage
+  - code-quality
 jobs:
-	- name: code-coverage
-	  stage: code-coverage
-	  cmd: make code-coverage
+  - name: code-coverage
+    stage: code-coverage
+    cmd: make code-coverage
 
-	- name: code-quality
-	  stage: code-quality
-	  cmd: make code-quality
+  - name: code-quality
+    stage: code-quality
+    cmd: make code-quality
 {% endif -%}
